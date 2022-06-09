@@ -29,16 +29,16 @@ class Command {
 
   void putHttp(String url, Map<String, dynamic> data) async {
     try {
-      var response = await dio.post(url, data: data);
+      var response = await dio.put(url, data: data);
       stdout.writeln(response);
     } catch (e) {
       print(e);
     }
   }
 
-  void patchHttp(String url, Map<String, dynamic> data) async {
+  void patchHttp(String url, Map<String, dynamic>? data) async {
     try {
-      var response = await dio.post(url, data: data);
+      var response = await dio.patch(url, data: data);
       stdout.writeln(response);
     } catch (e) {
       print(e);
@@ -47,7 +47,7 @@ class Command {
 
   void deleteHttp(String url, Map<String, dynamic>? data) async {
     try {
-      var response = await dio.post(url, data: data);
+      var response = await dio.delete(url, data: data);
       stdout.writeln(response);
     } catch (e) {
       print(e);

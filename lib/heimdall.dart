@@ -32,7 +32,7 @@ class Heimdall {
           case 'PATCH':
             _command.patchHttp(
               restString[2],
-              json.decode(restString[3]),
+              restString.length == 4 ? json.decode(restString[3]) : null,
             );
             break;
           case 'DELETE':
